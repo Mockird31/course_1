@@ -1,0 +1,170 @@
+\doxysection{validate.\+h File Reference}
+\hypertarget{validate_8h}{}\label{validate_8h}\index{validate.h@{validate.h}}
+
+
+Объявление функций для проверки входных данных  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}movie.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{validate_8h_a0b8d257b8da141e414d4e22a4a11f72d}\label{validate_8h_a0b8d257b8da141e414d4e22a4a11f72d} 
+\#define {\bfseries YEAR\+\_\+\+MAX}~2024
+\item 
+\Hypertarget{validate_8h_a5ae56cfcc277b5ca9616640e51fa916e}\label{validate_8h_a5ae56cfcc277b5ca9616640e51fa916e} 
+\#define {\bfseries YEAR\+\_\+\+MIN}~1924
+\item 
+\Hypertarget{validate_8h_af34e3ab099d3d31820b8b168dbb685aa}\label{validate_8h_af34e3ab099d3d31820b8b168dbb685aa} 
+\#define {\bfseries DUR\+\_\+\+MIN}~40
+\item 
+\Hypertarget{validate_8h_a14e20614e21694cf203f7734447a09d6}\label{validate_8h_a14e20614e21694cf203f7734447a09d6} 
+\#define {\bfseries DUR\+\_\+\+MAX}~180
+\item 
+\Hypertarget{validate_8h_ac5300ff53cc924d392352d7e323c0840}\label{validate_8h_ac5300ff53cc924d392352d7e323c0840} 
+\#define {\bfseries HOUR\+\_\+\+MAX}~23
+\item 
+\Hypertarget{validate_8h_a0f926ac17dcb3a4d2216ad3a2e37065b}\label{validate_8h_a0f926ac17dcb3a4d2216ad3a2e37065b} 
+\#define {\bfseries HOUR\+\_\+\+MIN}~0
+\item 
+\Hypertarget{validate_8h_ae162dc044167c24a14db8c002a9865ae}\label{validate_8h_ae162dc044167c24a14db8c002a9865ae} 
+\#define {\bfseries MINUTE\+\_\+\+MAX}~59
+\item 
+\Hypertarget{validate_8h_ae3a3b96d8b62584a96133f402ee7fe63}\label{validate_8h_ae3a3b96d8b62584a96133f402ee7fe63} 
+\#define {\bfseries MINUTE\+\_\+\+MIN}~0
+\item 
+\Hypertarget{validate_8h_a078693ce3ab68870e81cbc667297508a}\label{validate_8h_a078693ce3ab68870e81cbc667297508a} 
+\#define {\bfseries AGE\+\_\+\+RESTRICTION\+\_\+\+LEN}~5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{validate_8h_a9c96577307d7e0e434e94c29d88daf94}{validate\+Genre}} (const char \texorpdfstring{$\ast$}{*}genre)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли указанный жанр допустимым. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8h_a7aed4f39e1225e2c315bb583b6d2bd87}{validate\+Year}} (int year)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли год валидным. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8h_ada4d4317e4a43630a4bfdc567b42d04a}{validate\+Duration}} (int duration)
+\begin{DoxyCompactList}\small\item\em Проверяет, что продолжительность находится в допустимом диапазоне. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8h_a22b260f3f1c0615750f13b7ca22cfe70}{validate\+Age\+Restriction}} (const char \texorpdfstring{$\ast$}{*}age\+\_\+restriction)
+\begin{DoxyCompactList}\small\item\em Проверяет, соответствует ли указанная возрастная ограничение допустимым значениям. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8h_a922ba69e6cc23fab6234f2bfbf8c0d27}{validate\+Time}} (const char \texorpdfstring{$\ast$}{*}time)
+\begin{DoxyCompactList}\small\item\em Проверяет, соответствует ли строка формату времени HH\+:MM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Объявление функций для проверки входных данных 
+
+\begin{DoxyAuthor}{Author}
+Инякин Роман 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/06-\/05 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{validate_8h_a22b260f3f1c0615750f13b7ca22cfe70}\label{validate_8h_a22b260f3f1c0615750f13b7ca22cfe70} 
+\index{validate.h@{validate.h}!validateAgeRestriction@{validateAgeRestriction}}
+\index{validateAgeRestriction@{validateAgeRestriction}!validate.h@{validate.h}}
+\doxysubsubsection{\texorpdfstring{validateAgeRestriction()}{validateAgeRestriction()}}
+{\footnotesize\ttfamily bool validate\+Age\+Restriction (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{age\+\_\+restriction }\end{DoxyParamCaption})}
+
+
+
+Проверяет, соответствует ли указанная возрастная ограничение допустимым значениям. 
+
+Функция сравнивает переданное значение возрастной ограничения с заранее определенным списком допустимых значений. Если переданное значение совпадает с одним из допустимых, функция возвращает true, иначе -\/ false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em age\+\_\+restriction} & Строка, содержащая возрастную ограничение для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если возрастное ограничение допустимо, иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8h_ada4d4317e4a43630a4bfdc567b42d04a}\label{validate_8h_ada4d4317e4a43630a4bfdc567b42d04a} 
+\index{validate.h@{validate.h}!validateDuration@{validateDuration}}
+\index{validateDuration@{validateDuration}!validate.h@{validate.h}}
+\doxysubsubsection{\texorpdfstring{validateDuration()}{validateDuration()}}
+{\footnotesize\ttfamily bool validate\+Duration (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Проверяет, что продолжительность находится в допустимом диапазоне. 
+
+Функция проверяет, что переданная продолжительность (в минутах) находится в пределах от 40 до 180 минут включительно.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Продолжительность в минутах, которую нужно проверить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если продолжительность находится в диапазоне от 40 до 180 минут включительно; иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8h_a9c96577307d7e0e434e94c29d88daf94}\label{validate_8h_a9c96577307d7e0e434e94c29d88daf94} 
+\index{validate.h@{validate.h}!validateGenre@{validateGenre}}
+\index{validateGenre@{validateGenre}!validate.h@{validate.h}}
+\doxysubsubsection{\texorpdfstring{validateGenre()}{validateGenre()}}
+{\footnotesize\ttfamily bool validate\+Genre (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{genre }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли указанный жанр допустимым. 
+
+Функция сравнивает переданный аргумент с заранее определенным списком допустимых жанров. Если жанр присутствует в этом списке, функция возвращает true, иначе -\/ false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em genre} & Указатель на строку, содержащую название жанра для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает true, если жанр допустимый, и false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{validate_8h_a922ba69e6cc23fab6234f2bfbf8c0d27}\label{validate_8h_a922ba69e6cc23fab6234f2bfbf8c0d27} 
+\index{validate.h@{validate.h}!validateTime@{validateTime}}
+\index{validateTime@{validateTime}!validate.h@{validate.h}}
+\doxysubsubsection{\texorpdfstring{validateTime()}{validateTime()}}
+{\footnotesize\ttfamily bool validate\+Time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{time }\end{DoxyParamCaption})}
+
+
+
+Проверяет, соответствует ли строка формату времени HH\+:MM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Строка, представляющая время в формате "{}ЧЧ\+:ММ"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если строка представляет собой корректное время от 00\+:00 до 23\+:59; иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8h_a7aed4f39e1225e2c315bb583b6d2bd87}\label{validate_8h_a7aed4f39e1225e2c315bb583b6d2bd87} 
+\index{validate.h@{validate.h}!validateYear@{validateYear}}
+\index{validateYear@{validateYear}!validate.h@{validate.h}}
+\doxysubsubsection{\texorpdfstring{validateYear()}{validateYear()}}
+{\footnotesize\ttfamily bool validate\+Year (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли год валидным. 
+
+Функция проверяет, попадает ли указанный год в диапазон от 1924 до 2024 года включительно.
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Год, который нужно проверить на валидность. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если год валиден (попадает в диапазон от 1924 до 2024), иначе false. 
+\end{DoxyReturn}

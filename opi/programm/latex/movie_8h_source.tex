@@ -1,0 +1,63 @@
+\doxysection{movie.\+h}
+\hypertarget{movie_8h_source}{}\label{movie_8h_source}\mbox{\hyperlink{movie_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ MOVIE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MOVIE\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{check__date_8h}{check\_date.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{validate_8h}{validate.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MAX\_TITLE\_LEN\ 100}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAX\_DIRECTOR\_LEN\ 100}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MAX\_COUNTRY\_LEN\ 50}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ MAX\_CINEMA\_NAME\_LEN\ 100}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MAX\_GENRE\_LEN\ 20}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ MAX\_RECORDS\ 100}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MAX\_GENRES\ 5}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MAX\_LEN\ 256}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ FILE\_NAME\ "{}movies.txt"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{char}\ title[MAX\_LEN];}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ genre[MAX\_LEN];}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{char}\ director[MAX\_LEN];}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_movie_info_a30ab4667159285b6316cd89c0b8223e9}{year}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{char}\ country[MAX\_LEN];}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_movie_info_aca6b904f6ebabe64f4356c415b2c4831}{duration}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{char}\ age\_restriction[MAX\_LEN];}
+\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{struct_movie_info}{MovieInfo}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{struct_movie_info}{MovieInfo}}\ \mbox{\hyperlink{struct_movie_screening_a052e2796dc5c8c16545eba16905aa570}{movie}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{char}\ cinema[MAX\_LEN];}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{char}\ date[MAX\_LEN];}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{char}\ time[MAX\_LEN];}
+\DoxyCodeLine{00102\ \}\ \mbox{\hyperlink{struct_movie_screening}{MovieScreening}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{movie_8h_aceb50af4aed8b857d6e4d3075046212d}{readMovies}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{movie_8h_aafceb492e0d6d094b7c3ae0eba08bade}{saveMovies}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{movie_8h_a81457cac70442bcd7f14f18be86cbfac}{addMovie}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{movie_8h_aa033fd4aa2fb0c4c73c09c9a1aec9268}{deletePassedMovies}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ *count);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{movie_8h_a4b8d3876abae340aa6d0c9437f8661d5}{searchByDirectorOrGenre}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{movie_8h_aeb9d3c5157814c79d48a4c65852b4505}{displayMovies}}(\mbox{\hyperlink{struct_movie_screening}{MovieScreening}}\ movies[],\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

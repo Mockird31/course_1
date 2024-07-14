@@ -1,0 +1,36 @@
+\doxysection{validate.\+h}
+\hypertarget{validate_8h_source}{}\label{validate_8h_source}\mbox{\hyperlink{validate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_VALIDATE\_H\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_VALIDATE\_H\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{movie_8h}{movie.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ YEAR\_MAX\ 2024}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ YEAR\_MIN\ 1924}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ DUR\_MIN\ 40}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DUR\_MAX\ 180}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ HOUR\_MAX\ 23}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ HOUR\_MIN\ 0}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MINUTE\_MAX\ 59}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MINUTE\_MIN\ 0}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ AGE\_RESTRICTION\_LEN\ 5}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{validate_8h_a9c96577307d7e0e434e94c29d88daf94}{validateGenre}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *genre);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{validate_8h_a7aed4f39e1225e2c315bb583b6d2bd87}{validateYear}}(\textcolor{keywordtype}{int}\ year);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{validate_8h_ada4d4317e4a43630a4bfdc567b42d04a}{validateDuration}}(\textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{validate_8h_a22b260f3f1c0615750f13b7ca22cfe70}{validateAgeRestriction}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *age\_restriction);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{validate_8h_a922ba69e6cc23fab6234f2bfbf8c0d27}{validateTime}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *time);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

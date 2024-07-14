@@ -1,0 +1,136 @@
+\doxysection{validate.\+c File Reference}
+\hypertarget{validate_8c}{}\label{validate_8c}\index{validate.c@{validate.c}}
+
+
+Функции для проверки входных данных  
+
+
+{\ttfamily \#include "{}validate.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{validate_8c_a9c96577307d7e0e434e94c29d88daf94}{validate\+Genre}} (const char \texorpdfstring{$\ast$}{*}genre)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли указанный жанр допустимым. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8c_a7aed4f39e1225e2c315bb583b6d2bd87}{validate\+Year}} (int year)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли год валидным. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8c_ada4d4317e4a43630a4bfdc567b42d04a}{validate\+Duration}} (int duration)
+\begin{DoxyCompactList}\small\item\em Проверяет, что продолжительность находится в допустимом диапазоне. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8c_a22b260f3f1c0615750f13b7ca22cfe70}{validate\+Age\+Restriction}} (const char \texorpdfstring{$\ast$}{*}age\+\_\+restriction)
+\begin{DoxyCompactList}\small\item\em Проверяет, соответствует ли указанная возрастная ограничение допустимым значениям. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validate_8c_a922ba69e6cc23fab6234f2bfbf8c0d27}{validate\+Time}} (const char \texorpdfstring{$\ast$}{*}time)
+\begin{DoxyCompactList}\small\item\em Проверяет, соответствует ли строка формату времени HH\+:MM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Функции для проверки входных данных 
+
+\begin{DoxyAuthor}{Author}
+Инякин Роман 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/06-\/05 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{validate_8c_a22b260f3f1c0615750f13b7ca22cfe70}\label{validate_8c_a22b260f3f1c0615750f13b7ca22cfe70} 
+\index{validate.c@{validate.c}!validateAgeRestriction@{validateAgeRestriction}}
+\index{validateAgeRestriction@{validateAgeRestriction}!validate.c@{validate.c}}
+\doxysubsubsection{\texorpdfstring{validateAgeRestriction()}{validateAgeRestriction()}}
+{\footnotesize\ttfamily bool validate\+Age\+Restriction (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{age\+\_\+restriction }\end{DoxyParamCaption})}
+
+
+
+Проверяет, соответствует ли указанная возрастная ограничение допустимым значениям. 
+
+Функция сравнивает переданное значение возрастной ограничения с заранее определенным списком допустимых значений. Если переданное значение совпадает с одним из допустимых, функция возвращает true, иначе -\/ false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em age\+\_\+restriction} & Строка, содержащая возрастную ограничение для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если возрастное ограничение допустимо, иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8c_ada4d4317e4a43630a4bfdc567b42d04a}\label{validate_8c_ada4d4317e4a43630a4bfdc567b42d04a} 
+\index{validate.c@{validate.c}!validateDuration@{validateDuration}}
+\index{validateDuration@{validateDuration}!validate.c@{validate.c}}
+\doxysubsubsection{\texorpdfstring{validateDuration()}{validateDuration()}}
+{\footnotesize\ttfamily bool validate\+Duration (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Проверяет, что продолжительность находится в допустимом диапазоне. 
+
+Функция проверяет, что переданная продолжительность (в минутах) находится в пределах от 40 до 180 минут включительно.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Продолжительность в минутах, которую нужно проверить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если продолжительность находится в диапазоне от 40 до 180 минут включительно; иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8c_a9c96577307d7e0e434e94c29d88daf94}\label{validate_8c_a9c96577307d7e0e434e94c29d88daf94} 
+\index{validate.c@{validate.c}!validateGenre@{validateGenre}}
+\index{validateGenre@{validateGenre}!validate.c@{validate.c}}
+\doxysubsubsection{\texorpdfstring{validateGenre()}{validateGenre()}}
+{\footnotesize\ttfamily bool validate\+Genre (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{genre }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли указанный жанр допустимым. 
+
+Функция сравнивает переданный аргумент с заранее определенным списком допустимых жанров. Если жанр присутствует в этом списке, функция возвращает true, иначе -\/ false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em genre} & Указатель на строку, содержащую название жанра для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает true, если жанр допустимый, и false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{validate_8c_a922ba69e6cc23fab6234f2bfbf8c0d27}\label{validate_8c_a922ba69e6cc23fab6234f2bfbf8c0d27} 
+\index{validate.c@{validate.c}!validateTime@{validateTime}}
+\index{validateTime@{validateTime}!validate.c@{validate.c}}
+\doxysubsubsection{\texorpdfstring{validateTime()}{validateTime()}}
+{\footnotesize\ttfamily bool validate\+Time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{time }\end{DoxyParamCaption})}
+
+
+
+Проверяет, соответствует ли строка формату времени HH\+:MM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Строка, представляющая время в формате "{}ЧЧ\+:ММ"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если строка представляет собой корректное время от 00\+:00 до 23\+:59; иначе false. 
+\end{DoxyReturn}
+\Hypertarget{validate_8c_a7aed4f39e1225e2c315bb583b6d2bd87}\label{validate_8c_a7aed4f39e1225e2c315bb583b6d2bd87} 
+\index{validate.c@{validate.c}!validateYear@{validateYear}}
+\index{validateYear@{validateYear}!validate.c@{validate.c}}
+\doxysubsubsection{\texorpdfstring{validateYear()}{validateYear()}}
+{\footnotesize\ttfamily bool validate\+Year (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли год валидным. 
+
+Функция проверяет, попадает ли указанный год в диапазон от 1924 до 2024 года включительно.
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Год, который нужно проверить на валидность. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если год валиден (попадает в диапазон от 1924 до 2024), иначе false. 
+\end{DoxyReturn}

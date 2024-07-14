@@ -1,0 +1,12 @@
+prod1
+lalala
+1400
+3
+prod3 
+bababa
+1400
+2
+prod2 
+bababa
+1400
+1

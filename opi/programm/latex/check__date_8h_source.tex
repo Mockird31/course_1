@@ -1,0 +1,59 @@
+\doxysection{check\+\_\+date.\+h}
+\hypertarget{check__date_8h_source}{}\label{check__date_8h_source}\mbox{\hyperlink{check__date_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_CHECK\_DATE\_H\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_CHECK\_DATE\_H\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAX\_STR\ 128}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MAX\_WORD\ 16}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ INPUT\_ERROR\ 1}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ NO\_WORDS\ 2}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ WRONG\_DATE\ 3}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MAX\_COUNT\ 3}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MONTHES\ "{}февраля\ января\ марта\ апреля\ мая\ июня\ июля\ августа\ сентября\ октября\ ноября\ декабря"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ SEPS\ "{}\ "{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ NUMS\_OF\_MONTHES\ 12}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ FIRST\_DATE\_LATER\ 1}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ SECOND\_DATE\_LATER\ -\/1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ DATE\_EQUALS\ 0}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a4bbef776c2c16bdeecf889b2e481ad79}{input\_strings}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{check__date_8h_a5c9048801c1aaa7d0533839d02ab40bb}{make\_lower}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a83132670679e469d52340b3fcd41daa9}{split}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{char}\ date[MAX\_COUNT][MAX\_WORD\ +\ 1],\ \textcolor{keywordtype}{size\_t}\ *len);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_aa9b9d4ef310c9fcd03b270295abf70e6}{check\_month}}(\textcolor{keywordtype}{char}\ *month);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_abfc90d6f4e2cdc9126bdaea7f4234dd9}{check\_day}}(\textcolor{keywordtype}{char}\ *day);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_ab472473ce1e966a1e9d8f4aab27e5621}{check\_full\_date}}(\textcolor{keywordtype}{char}\ date[MAX\_COUNT][MAX\_WORD\ +\ 1]);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_ac3c8fd555b198be248b51b239593385d}{is\_integer}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a71e487935fcbbbd59c2689126dfbe630}{is\_leap\_year}}(\textcolor{keywordtype}{char}\ *year);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a3d61de9a0a4e63306f2a1f526e15e8ec}{check\_year}}(\textcolor{keywordtype}{char}\ *year);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_adc926942bab115d6732023f3716c07ff}{check\_correct}}(\textcolor{keywordtype}{char}\ date[MAX\_COUNT][MAX\_WORD\ +\ 1]);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{check__date_8h_a1d9ff13ca6fbfeed019ff8459a2d7b27}{ltrim}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{check__date_8h_a36c31afc53e5a1e87177eff988d6d17e}{rtrim}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a32296ce2497846460f74f70a408d70ce}{monthToNumber}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *month);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_ac5f88674dfd4e1815cd658f4d04d70e0}{compareDates}}(\textcolor{keywordtype}{char}\ date1[MAX\_COUNT][MAX\_WORD\ +\ 1],\ \textcolor{keywordtype}{char}\ date2[MAX\_COUNT][MAX\_WORD\ +\ 1]);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_a9c034ff7625fd3f0fbe29255ba7e8e8b}{parse\_time}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *time,\ uint16\_t\ *hour,\ uint16\_t\ *minute);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{check__date_8h_ae91be0a73ea3a8614a5c00fc646fb41d}{compare\_time}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *time1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *time2);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

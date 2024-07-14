@@ -1,0 +1,180 @@
+\doxysection{movie.\+c File Reference}
+\hypertarget{movie_8c}{}\label{movie_8c}\index{movie.c@{movie.c}}
+
+
+Функции для работы с афишей кинотеатра  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}movie.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{movie_8c_aceb50af4aed8b857d6e4d3075046212d}{read\+Movies}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Читает информацию о сеансах кино из файла и заполняет массив структур \doxylink{struct_movie_screening}{Movie\+Screening}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{movie_8c_aafceb492e0d6d094b7c3ae0eba08bade}{save\+Movies}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Сохраняет информацию о сеансах кино в файл. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{movie_8c_a81457cac70442bcd7f14f18be86cbfac}{add\+Movie}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Добавляет информацию о новом киносеансе в массив сеансов. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{movie_8c_aa033fd4aa2fb0c4c73c09c9a1aec9268}{delete\+Passed\+Movies}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Удаляет из массива показы фильмов, которые уже прошли на момент указанной даты и времени. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{movie_8c_a4b8d3876abae340aa6d0c9437f8661d5}{search\+By\+Director\+Or\+Genre}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Поиск сеансов кино по режиссёру или жанру \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{movie_8c_aeb9d3c5157814c79d48a4c65852b4505}{display\+Movies}} (\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}} movies\mbox{[}$\,$\mbox{]}, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Отображает информацию о сеансах фильмов в консоли. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Функции для работы с афишей кинотеатра 
+
+\begin{DoxyAuthor}{Author}
+Инякин Роман 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/06-\/05 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{movie_8c_a81457cac70442bcd7f14f18be86cbfac}\label{movie_8c_a81457cac70442bcd7f14f18be86cbfac} 
+\index{movie.c@{movie.c}!addMovie@{addMovie}}
+\index{addMovie@{addMovie}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{addMovie()}{addMovie()}}
+{\footnotesize\ttfamily int add\+Movie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Добавляет информацию о новом киносеансе в массив сеансов. 
+
+Функция запрашивает у пользователя ввод информации о фильме и проверяет корректность введенных данных. Если все данные верны, информация сохраняется в массиве, и счетчик записей увеличивается на один. В случае ошибки валидации или превышения максимального количества записей, функция выводит сообщение об ошибке и завершается с кодом ошибки.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movies} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, содержащий информацию о киносеансах. \\
+\hline
+{\em count} & Указатель на переменную, хранящую количество текущих записей в массиве movies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает EXIT\+\_\+\+SUCCESS при успешном добавлении фильма или EXIT\+\_\+\+FAILURE в случае ошибки. 
+\end{DoxyReturn}
+\Hypertarget{movie_8c_aa033fd4aa2fb0c4c73c09c9a1aec9268}\label{movie_8c_aa033fd4aa2fb0c4c73c09c9a1aec9268} 
+\index{movie.c@{movie.c}!deletePassedMovies@{deletePassedMovies}}
+\index{deletePassedMovies@{deletePassedMovies}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{deletePassedMovies()}{deletePassedMovies()}}
+{\footnotesize\ttfamily int delete\+Passed\+Movies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Удаляет из массива показы фильмов, которые уже прошли на момент указанной даты и времени. 
+
+Функция принимает массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, представляющих собой информацию о показах фильмов, а также указатель на количество элементов в этом массиве. Пользователю предлагается ввести текущую дату и время. Затем функция проверяет каждую запись в массиве и удаляет те, которые соответствуют условиям\+:
+\begin{DoxyItemize}
+\item Дата показа меньше введенной даты.
+\item Или дата показа равна введенной, но время показа меньше введенного времени.
+\end{DoxyItemize}
+
+После обработки всех записей в массиве, функция выводит сообщение об успешном удалении прошедших показов фильмов.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movies\mbox{[}$\,$\mbox{]}} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, содержащий информацию о показах фильмов. \\
+\hline
+{\em count} & Указатель на переменную, хранящую количество элементов в массиве movies\mbox{[}\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает EXIT\+\_\+\+SUCCESS, если все прошло успешно, или EXIT\+\_\+\+FAILURE в случае ошибок при вводе данных. 
+\end{DoxyReturn}
+\Hypertarget{movie_8c_aeb9d3c5157814c79d48a4c65852b4505}\label{movie_8c_aeb9d3c5157814c79d48a4c65852b4505} 
+\index{movie.c@{movie.c}!displayMovies@{displayMovies}}
+\index{displayMovies@{displayMovies}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{displayMovies()}{displayMovies()}}
+{\footnotesize\ttfamily void display\+Movies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Отображает информацию о сеансах фильмов в консоли. 
+
+Функция проходит по массиву сеансов фильмов и выводит детали каждого сеанса\+: название фильма, жанр, режиссёр, год выпуска, страна производства, длительность, возрастное ограничение, кинотеатр, дату и время показа.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movies} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, содержащий информацию о сеансах фильмов. \\
+\hline
+{\em count} & Количество элементов в массиве movies. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{movie_8c_aceb50af4aed8b857d6e4d3075046212d}\label{movie_8c_aceb50af4aed8b857d6e4d3075046212d} 
+\index{movie.c@{movie.c}!readMovies@{readMovies}}
+\index{readMovies@{readMovies}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{readMovies()}{readMovies()}}
+{\footnotesize\ttfamily int read\+Movies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Читает информацию о сеансах кино из файла и заполняет массив структур \doxylink{struct_movie_screening}{Movie\+Screening}. 
+
+Функция открывает файл с именем, указанным в макросе FILE\+\_\+\+NAME, для чтения. Если файл не может быть открыт, выводится сообщение об ошибке и функция возвращает код ошибки EXIT\+\_\+\+FAILURE. В противном случае, функция читает данные о каждом сеансе кино из файла и заполняет массив структур \doxylink{struct_movie_screening}{Movie\+Screening}. Каждая структура содержит информацию о фильме и его показе. После успешного чтения всех данных из файла, функция закрывает файл и возвращает код успеха EXIT\+\_\+\+SUCCESS.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em movies} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, который будет заполнен данными о сеансах кино. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em count} & Указатель на переменную типа size\+\_\+t, которая будет увеличена на количество успешно прочитанных записей. Изначальное значение должно быть равно нулю.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Код возврата функции\+:
+\begin{DoxyItemize}
+\item EXIT\+\_\+\+SUCCESS, если все операции выполнены успешно.
+\item EXIT\+\_\+\+FAILURE, если произошла ошибка при открытии файла. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{movie_8c_aafceb492e0d6d094b7c3ae0eba08bade}\label{movie_8c_aafceb492e0d6d094b7c3ae0eba08bade} 
+\index{movie.c@{movie.c}!saveMovies@{saveMovies}}
+\index{saveMovies@{saveMovies}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{saveMovies()}{saveMovies()}}
+{\footnotesize\ttfamily int save\+Movies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Сохраняет информацию о сеансах кино в файл. 
+
+Функция принимает массив структур \doxylink{struct_movie_screening}{Movie\+Screening} и количество элементов в этом массиве. Каждый элемент массива содержит информацию о фильме и его показе в кинотеатре.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movies} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, содержащий информацию о сеансах кино. \\
+\hline
+{\em count} & Количество элементов в массиве movies.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает EXIT\+\_\+\+SUCCESS при успешном выполнении операции или EXIT\+\_\+\+FAILURE в случае ошибки открытия файла. 
+\end{DoxyReturn}
+\Hypertarget{movie_8c_a4b8d3876abae340aa6d0c9437f8661d5}\label{movie_8c_a4b8d3876abae340aa6d0c9437f8661d5} 
+\index{movie.c@{movie.c}!searchByDirectorOrGenre@{searchByDirectorOrGenre}}
+\index{searchByDirectorOrGenre@{searchByDirectorOrGenre}!movie.c@{movie.c}}
+\doxysubsubsection{\texorpdfstring{searchByDirectorOrGenre()}{searchByDirectorOrGenre()}}
+{\footnotesize\ttfamily void search\+By\+Director\+Or\+Genre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_movie_screening}{Movie\+Screening}}}]{movies\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Поиск сеансов кино по режиссёру или жанру 
+
+Функция позволяет пользователю ввести фамилию режиссёра или название жанра и выводит информацию о всех сеансах кино, которые соответствуют введённому критерию поиска. Если ни один из сеансов не соответствует критериям, выводится сообщение об отсутствии результатов.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movies} & Массив структур \doxylink{struct_movie_screening}{Movie\+Screening}, содержащий информацию о сеансах кино \\
+\hline
+{\em count} & Количество элементов в массиве movies \\
+\hline
+\end{DoxyParams}

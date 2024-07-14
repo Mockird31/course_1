@@ -1,0 +1,36 @@
+\doxysection{Movie\+Screening Struct Reference}
+\hypertarget{struct_movie_screening}{}\label{struct_movie_screening}\index{MovieScreening@{MovieScreening}}
+
+
+Структура данных для хранения информации о просмотре фильма в кинотеатре.  
+
+
+
+
+{\ttfamily \#include $<$movie.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_movie_screening_a052e2796dc5c8c16545eba16905aa570}\label{struct_movie_screening_a052e2796dc5c8c16545eba16905aa570} 
+\mbox{\hyperlink{struct_movie_info}{Movie\+Info}} {\bfseries movie}
+\begin{DoxyCompactList}\small\item\em Информация о фильме, показываемом во время данного сеанса. \end{DoxyCompactList}\item 
+\Hypertarget{struct_movie_screening_a605fabbd00da20c0b3d2464afd44abbf}\label{struct_movie_screening_a605fabbd00da20c0b3d2464afd44abbf} 
+char {\bfseries cinema} \mbox{[}MAX\+\_\+\+LEN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Название кинотеатра, где проходит показ. \end{DoxyCompactList}\item 
+\Hypertarget{struct_movie_screening_aaaa3ef164e8721d51862398d3b2d3922}\label{struct_movie_screening_aaaa3ef164e8721d51862398d3b2d3922} 
+char {\bfseries date} \mbox{[}MAX\+\_\+\+LEN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Дата показа фильма в формате YYYY-\/\+MM-\/\+DD. \end{DoxyCompactList}\item 
+\Hypertarget{struct_movie_screening_aeca8bf2de208f7d11c5c838244c2839c}\label{struct_movie_screening_aeca8bf2de208f7d11c5c838244c2839c} 
+char {\bfseries time} \mbox{[}MAX\+\_\+\+LEN\mbox{]}
+\begin{DoxyCompactList}\small\item\em Время начала показа фильма в формате HH\+:MM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура данных для хранения информации о просмотре фильма в кинотеатре. 
+
+Эта структура содержит информацию о конкретном показе фильма в кинотеатре, включая данные о самом фильме через вложенную структуру \doxylink{struct_movie_info}{Movie\+Info}, а также информацию о кинотеатре ({\itshape cinema}), дате ({\itshape date}) и времени ({\itshape time}) показа. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{movie_8h}{movie.\+h}}\end{DoxyCompactItemize}

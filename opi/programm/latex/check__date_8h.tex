@@ -1,0 +1,408 @@
+\doxysection{check\+\_\+date.\+h File Reference}
+\hypertarget{check__date_8h}{}\label{check__date_8h}\index{check\_date.h@{check\_date.h}}
+
+
+Объявление функций для проверки даты и времени  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{check__date_8h_a8b6d77865140befe3a9bc16132d2e696}\label{check__date_8h_a8b6d77865140befe3a9bc16132d2e696} 
+\#define {\bfseries MAX\+\_\+\+STR}~128
+\item 
+\Hypertarget{check__date_8h_a95b015e2f596dc86ea9220be04427e1a}\label{check__date_8h_a95b015e2f596dc86ea9220be04427e1a} 
+\#define {\bfseries MAX\+\_\+\+WORD}~16
+\item 
+\Hypertarget{check__date_8h_a288116f92845fddefeb044f5b84bc889}\label{check__date_8h_a288116f92845fddefeb044f5b84bc889} 
+\#define {\bfseries INPUT\+\_\+\+ERROR}~1
+\item 
+\Hypertarget{check__date_8h_a13d0eb89e739f12f3244b5227f12f2c1}\label{check__date_8h_a13d0eb89e739f12f3244b5227f12f2c1} 
+\#define {\bfseries NO\+\_\+\+WORDS}~2
+\item 
+\Hypertarget{check__date_8h_aac67e29bdd3316d11760b7fbdb3c9d4c}\label{check__date_8h_aac67e29bdd3316d11760b7fbdb3c9d4c} 
+\#define {\bfseries WRONG\+\_\+\+DATE}~3
+\item 
+\Hypertarget{check__date_8h_ae14eaaed1fe7cdf491da54a714c426b3}\label{check__date_8h_ae14eaaed1fe7cdf491da54a714c426b3} 
+\#define {\bfseries MAX\+\_\+\+COUNT}~3
+\item 
+\Hypertarget{check__date_8h_ab202e02a6fa8c85e1856f485e86c3fb4}\label{check__date_8h_ab202e02a6fa8c85e1856f485e86c3fb4} 
+\#define {\bfseries MONTHES}~"{}февраля января марта апреля мая июня июля августа сентября октября ноября декабря"{}
+\item 
+\Hypertarget{check__date_8h_afca8a3f047ca823ae87930b12fd1dc3f}\label{check__date_8h_afca8a3f047ca823ae87930b12fd1dc3f} 
+\#define {\bfseries SEPS}~"{} "{}
+\item 
+\Hypertarget{check__date_8h_a3b20a852c09776dc8bb5c6ac0dc05210}\label{check__date_8h_a3b20a852c09776dc8bb5c6ac0dc05210} 
+\#define {\bfseries NUMS\+\_\+\+OF\+\_\+\+MONTHES}~12
+\item 
+\Hypertarget{check__date_8h_adaa580dc224eb6460154baf53a48ff24}\label{check__date_8h_adaa580dc224eb6460154baf53a48ff24} 
+\#define {\bfseries FIRST\+\_\+\+DATE\+\_\+\+LATER}~1
+\item 
+\Hypertarget{check__date_8h_a5f79f011a0372a4000f5f815f924a60c}\label{check__date_8h_a5f79f011a0372a4000f5f815f924a60c} 
+\#define {\bfseries SECOND\+\_\+\+DATE\+\_\+\+LATER}~-\/1
+\item 
+\Hypertarget{check__date_8h_a3e76e0b49f784d88ad41399f50207c75}\label{check__date_8h_a3e76e0b49f784d88ad41399f50207c75} 
+\#define {\bfseries DATE\+\_\+\+EQUALS}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{check__date_8h_a4bbef776c2c16bdeecf889b2e481ad79}{input\+\_\+strings}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Читает строку из стандартного ввода и копирует её в переданный буфер. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{check__date_8h_a5c9048801c1aaa7d0533839d02ab40bb}{make\+\_\+lower}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Преобразует все символы в строке в нижний регистр. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_a83132670679e469d52340b3fcd41daa9}{split}} (char \texorpdfstring{$\ast$}{*}str, char date\mbox{[}MAX\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+WORD+1\mbox{]}, size\+\_\+t \texorpdfstring{$\ast$}{*}len)
+\begin{DoxyCompactList}\small\item\em Разделяет строку на слова, используя заданные разделители. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_aa9b9d4ef310c9fcd03b270295abf70e6}{check\+\_\+month}} (char \texorpdfstring{$\ast$}{*}month)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли переданный месяц действительным. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_abfc90d6f4e2cdc9126bdaea7f4234dd9}{check\+\_\+day}} (char \texorpdfstring{$\ast$}{*}day)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли переданная строка корректным днем месяца. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_ab472473ce1e966a1e9d8f4aab27e5621}{check\+\_\+full\+\_\+date}} (char date\mbox{[}MAX\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+WORD+1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Проверяет корректность полной даты. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_ac3c8fd555b198be248b51b239593385d}{is\+\_\+integer}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли строка целым числом. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_a71e487935fcbbbd59c2689126dfbe630}{is\+\_\+leap\+\_\+year}} (char \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли указанный год високосным. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_a3d61de9a0a4e63306f2a1f526e15e8ec}{check\+\_\+year}} (char \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли переданный год валидным. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_adc926942bab115d6732023f3716c07ff}{check\+\_\+correct}} (char date\mbox{[}MAX\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+WORD+1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Проверяет корректность даты. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{check__date_8h_a1d9ff13ca6fbfeed019ff8459a2d7b27}{ltrim}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Удаляет пробелы в начале строки. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{check__date_8h_a36c31afc53e5a1e87177eff988d6d17e}{rtrim}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Удаляет пробелы в конце строки. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_a32296ce2497846460f74f70a408d70ce}{month\+To\+Number}} (const char \texorpdfstring{$\ast$}{*}month)
+\begin{DoxyCompactList}\small\item\em Преобразует название месяца из текстовой формы в числовой формат. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_ac5f88674dfd4e1815cd658f4d04d70e0}{compare\+Dates}} (char date1\mbox{[}MAX\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+WORD+1\mbox{]}, char date2\mbox{[}MAX\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+WORD+1\mbox{]})
+\begin{DoxyCompactList}\small\item\em Сравнивает две даты в формате строки и возвращает код результата сравнения. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_a9c034ff7625fd3f0fbe29255ba7e8e8b}{parse\+\_\+time}} (const char \texorpdfstring{$\ast$}{*}time, uint16\+\_\+t \texorpdfstring{$\ast$}{*}hour, uint16\+\_\+t \texorpdfstring{$\ast$}{*}minute)
+\begin{DoxyCompactList}\small\item\em Функция для разбора строки с временем в формате "{}часы\+:минуты"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{check__date_8h_ae91be0a73ea3a8614a5c00fc646fb41d}{compare\+\_\+time}} (const char \texorpdfstring{$\ast$}{*}time1, const char \texorpdfstring{$\ast$}{*}time2)
+\begin{DoxyCompactList}\small\item\em Сравнивает два времени в формате "{}\+HH\+:\+MM"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Объявление функций для проверки даты и времени 
+
+\begin{DoxyAuthor}{Author}
+Инякин Роман 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/06-\/05 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{check__date_8h_adc926942bab115d6732023f3716c07ff}\label{check__date_8h_adc926942bab115d6732023f3716c07ff} 
+\index{check\_date.h@{check\_date.h}!check\_correct@{check\_correct}}
+\index{check\_correct@{check\_correct}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{check\_correct()}{check\_correct()}}
+{\footnotesize\ttfamily int check\+\_\+correct (\begin{DoxyParamCaption}\item[{char}]{date\mbox{[}\+MAX\+\_\+\+COUNT\mbox{]}\mbox{[}\+MAX\+\_\+\+WORD+1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Проверяет корректность даты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Массив строк, представляющих дату. Первый элемент массива -\/ день, второй -\/ месяц, третий -\/ год. \\
+\hline
+{\em day} & Указатель на переменную, в которую будет записан день, если он корректен. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если дата корректна, иначе WRONG\+\_\+\+DATE. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_abfc90d6f4e2cdc9126bdaea7f4234dd9}\label{check__date_8h_abfc90d6f4e2cdc9126bdaea7f4234dd9} 
+\index{check\_date.h@{check\_date.h}!check\_day@{check\_day}}
+\index{check\_day@{check\_day}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{check\_day()}{check\_day()}}
+{\footnotesize\ttfamily int check\+\_\+day (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{day }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли переданная строка корректным днем месяца. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Строка, представляющая день месяца. \\
+\hline
+{\em int\+\_\+day} & Указатель на переменную, в которую будет сохранено числовое значение дня, если он корректен. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если день корректен, иначе возвращает WRONG\+\_\+\+DAY. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_ab472473ce1e966a1e9d8f4aab27e5621}\label{check__date_8h_ab472473ce1e966a1e9d8f4aab27e5621} 
+\index{check\_date.h@{check\_date.h}!check\_full\_date@{check\_full\_date}}
+\index{check\_full\_date@{check\_full\_date}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{check\_full\_date()}{check\_full\_date()}}
+{\footnotesize\ttfamily int check\+\_\+full\+\_\+date (\begin{DoxyParamCaption}\item[{char}]{date\mbox{[}\+MAX\+\_\+\+COUNT\mbox{]}\mbox{[}\+MAX\+\_\+\+WORD+1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Проверяет корректность полной даты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Двумерный массив символов, представляющий дату. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если дата корректна, и WRONG\+\_\+\+DATE в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_aa9b9d4ef310c9fcd03b270295abf70e6}\label{check__date_8h_aa9b9d4ef310c9fcd03b270295abf70e6} 
+\index{check\_date.h@{check\_date.h}!check\_month@{check\_month}}
+\index{check\_month@{check\_month}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{check\_month()}{check\_month()}}
+{\footnotesize\ttfamily int check\+\_\+month (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{month }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли переданный месяц действительным. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & Строка, содержащая название месяца для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает WRONG\+\_\+\+MONTH, если месяц не найден, иначе EXIT\+\_\+\+SUCCESS. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a3d61de9a0a4e63306f2a1f526e15e8ec}\label{check__date_8h_a3d61de9a0a4e63306f2a1f526e15e8ec} 
+\index{check\_date.h@{check\_date.h}!check\_year@{check\_year}}
+\index{check\_year@{check\_year}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{check\_year()}{check\_year()}}
+{\footnotesize\ttfamily int check\+\_\+year (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли переданный год валидным. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Строка, представляющая год. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если год валиден, и WRONG\+\_\+\+YEAR в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_ae91be0a73ea3a8614a5c00fc646fb41d}\label{check__date_8h_ae91be0a73ea3a8614a5c00fc646fb41d} 
+\index{check\_date.h@{check\_date.h}!compare\_time@{compare\_time}}
+\index{compare\_time@{compare\_time}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{compare\_time()}{compare\_time()}}
+{\footnotesize\ttfamily int compare\+\_\+time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{time1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{time2 }\end{DoxyParamCaption})}
+
+
+
+Сравнивает два времени в формате "{}\+HH\+:\+MM"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time1} & Указатель на строку, содержащую время в формате "{}\+HH\+:\+MM"{}. \\
+\hline
+{\em time2} & Указатель на строку, содержащую время в формате "{}\+HH\+:\+MM"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Результат сравнения времени\+:
+\begin{DoxyItemize}
+\item Если время1 позже времени2, возвращает FIRST\+\_\+\+DATE\+\_\+\+LATER.
+\item Если время1 раньше времени2, возвращает SECOND\+\_\+\+DATE\+\_\+\+LATER.
+\item Если времена равны, возвращает DATE\+\_\+\+EQUALS.
+\item Если произошла ошибка при разборе времени, возвращает код ошибки (res). 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_ac5f88674dfd4e1815cd658f4d04d70e0}\label{check__date_8h_ac5f88674dfd4e1815cd658f4d04d70e0} 
+\index{check\_date.h@{check\_date.h}!compareDates@{compareDates}}
+\index{compareDates@{compareDates}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{compareDates()}{compareDates()}}
+{\footnotesize\ttfamily int compare\+Dates (\begin{DoxyParamCaption}\item[{char}]{date1\mbox{[}\+MAX\+\_\+\+COUNT\mbox{]}\mbox{[}\+MAX\+\_\+\+WORD+1\mbox{]},  }\item[{char}]{date2\mbox{[}\+MAX\+\_\+\+COUNT\mbox{]}\mbox{[}\+MAX\+\_\+\+WORD+1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Сравнивает две даты в формате строки и возвращает код результата сравнения. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date1} & Первая дата для сравнения, представленная в виде массива символов. \\
+\hline
+{\em date2} & Вторая дата для сравнения, представленная в виде массива символов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Коды результата сравнения\+:
+\begin{DoxyItemize}
+\item FIRST\+\_\+\+DATE\+\_\+\+LATER, если первая дата позже второй.
+\item SECOND\+\_\+\+DATE\+\_\+\+LATER, если вторая дата позже первой.
+\item DATE\+\_\+\+EQUALS, если даты равны. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a4bbef776c2c16bdeecf889b2e481ad79}\label{check__date_8h_a4bbef776c2c16bdeecf889b2e481ad79} 
+\index{check\_date.h@{check\_date.h}!input\_strings@{input\_strings}}
+\index{input\_strings@{input\_strings}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{input\_strings()}{input\_strings()}}
+{\footnotesize\ttfamily int input\+\_\+strings (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Читает строку из стандартного ввода и копирует её в переданный буфер. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Указатель на буфер, в который будет скопирована введенная строка. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS в случае успешного чтения и копирования строки, INPUT\+\_\+\+ERROR в случае ошибки ввода или если введенная строка не соответствует требованиям (слишком длинная или пустая). 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_ac3c8fd555b198be248b51b239593385d}\label{check__date_8h_ac3c8fd555b198be248b51b239593385d} 
+\index{check\_date.h@{check\_date.h}!is\_integer@{is\_integer}}
+\index{is\_integer@{is\_integer}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{is\_integer()}{is\_integer()}}
+{\footnotesize\ttfamily int is\+\_\+integer (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли строка целым числом. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Указатель на строку, которую нужно проверить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если строка является целым числом, иначе возвращает WRONG\+\_\+\+DAY в случае обнаружения нецифрового символа. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a71e487935fcbbbd59c2689126dfbe630}\label{check__date_8h_a71e487935fcbbbd59c2689126dfbe630} 
+\index{check\_date.h@{check\_date.h}!is\_leap\_year@{is\_leap\_year}}
+\index{is\_leap\_year@{is\_leap\_year}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{is\_leap\_year()}{is\_leap\_year()}}
+{\footnotesize\ttfamily int is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли указанный год високосным. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Строка, представляющая год в виде числа. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если год является високосным, NOT\+\_\+\+LEAP\+\_\+\+YEAR, если год не является високосным, и WRONG\+\_\+\+YEAR, если входная строка не представляет собой корректный год. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a1d9ff13ca6fbfeed019ff8459a2d7b27}\label{check__date_8h_a1d9ff13ca6fbfeed019ff8459a2d7b27} 
+\index{check\_date.h@{check\_date.h}!ltrim@{ltrim}}
+\index{ltrim@{ltrim}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{ltrim()}{ltrim()}}
+{\footnotesize\ttfamily void ltrim (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Удаляет пробелы в начале строки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Указатель на строку, которую нужно обработать. Функция изменяет эту строку на месте. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{check__date_8h_a5c9048801c1aaa7d0533839d02ab40bb}\label{check__date_8h_a5c9048801c1aaa7d0533839d02ab40bb} 
+\index{check\_date.h@{check\_date.h}!make\_lower@{make\_lower}}
+\index{make\_lower@{make\_lower}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{make\_lower()}{make\_lower()}}
+{\footnotesize\ttfamily void make\+\_\+lower (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Преобразует все символы в строке в нижний регистр. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Строка, символы которой нужно преобразовать в нижний регистр. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{check__date_8h_a32296ce2497846460f74f70a408d70ce}\label{check__date_8h_a32296ce2497846460f74f70a408d70ce} 
+\index{check\_date.h@{check\_date.h}!monthToNumber@{monthToNumber}}
+\index{monthToNumber@{monthToNumber}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{monthToNumber()}{monthToNumber()}}
+{\footnotesize\ttfamily int month\+To\+Number (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{month }\end{DoxyParamCaption})}
+
+
+
+Преобразует название месяца из текстовой формы в числовой формат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & Название месяца в текстовой форме. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Числовое представление месяца (от 1 до 12) или -\/1, если месяц не найден. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a9c034ff7625fd3f0fbe29255ba7e8e8b}\label{check__date_8h_a9c034ff7625fd3f0fbe29255ba7e8e8b} 
+\index{check\_date.h@{check\_date.h}!parse\_time@{parse\_time}}
+\index{parse\_time@{parse\_time}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{parse\_time()}{parse\_time()}}
+{\footnotesize\ttfamily int parse\+\_\+time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{time,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{hour,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{minute }\end{DoxyParamCaption})}
+
+
+
+Функция для разбора строки с временем в формате "{}часы\+:минуты"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Строка, содержащая время в формате "{}часы\+:минуты"{} (например, "{}12\+:34"{}). \\
+\hline
+{\em hour} & Указатель на переменную, в которую будет записан полученный час. \\
+\hline
+{\em minute} & Указатель на переменную, в которую будет записана полученная минута. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+SUCCESS, если строка была успешно разобрана; иначе EXIT\+\_\+\+FAILURE. 
+\end{DoxyReturn}
+\Hypertarget{check__date_8h_a36c31afc53e5a1e87177eff988d6d17e}\label{check__date_8h_a36c31afc53e5a1e87177eff988d6d17e} 
+\index{check\_date.h@{check\_date.h}!rtrim@{rtrim}}
+\index{rtrim@{rtrim}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{rtrim()}{rtrim()}}
+{\footnotesize\ttfamily void rtrim (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Удаляет пробелы в конце строки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Указатель на строку, которую нужно обработать. Функция изменяет эту строку на месте. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{check__date_8h_a83132670679e469d52340b3fcd41daa9}\label{check__date_8h_a83132670679e469d52340b3fcd41daa9} 
+\index{check\_date.h@{check\_date.h}!split@{split}}
+\index{split@{split}!check\_date.h@{check\_date.h}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily int split (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char}]{date\mbox{[}\+MAX\+\_\+\+COUNT\mbox{]}\mbox{[}\+MAX\+\_\+\+WORD+1\mbox{]},  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{len }\end{DoxyParamCaption})}
+
+
+
+Разделяет строку на слова, используя заданные разделители. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Входная строка, которую нужно разделить. \\
+\hline
+{\em words} & Массив, в который будут скопированы слова. Максимальное количество слов, которое может быть разделено, определено константой MAX\+\_\+\+COUNT. \\
+\hline
+{\em len} & Указатель на переменную, в которую будет записано количество разделенных слов.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Возвращает EXIT\+\_\+\+SUCCESS, если количество слов равно 3, иначе возвращает INPUT\+\_\+\+ERROR. 
+\end{DoxyReturn}
